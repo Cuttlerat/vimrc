@@ -1,3 +1,4 @@
+set nocompatible
 set encoding=utf-8
 set mouse-=a
 set hlsearch
@@ -9,6 +10,16 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set incsearch
+
+set path+=**
+set wildmenu
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
 
 set number relativenumber
 set cursorline
